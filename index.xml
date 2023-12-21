@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Josiah&#39;s blog</title>
+    <link>/</link>
+    <description>Recent content on Josiah&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Dec 2023 21:51:41 +0530</lastBuildDate>
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Org Entry</title>
+      <link>/orgs/org-entry/</link>
+      <pubDate>Thu, 21 Dec 2023 21:51:41 +0530</pubDate>
+      <guid>/orgs/org-entry/</guid>
+      <description>
+&lt;div id=&#34;outline-container-headline-1&#34; class=&#34;outline-2&#34;&gt;
+&lt;h2 id=&#34;headline-1&#34;&gt;
+Bit Manipulation
+&lt;/h2&gt;
+&lt;div id=&#34;outline-text-headline-1&#34; class=&#34;outline-text-2&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;Day to day number system is decimal&lt;/li&gt;
+&lt;li&gt;Computer can only understand binary&lt;/li&gt;
+&lt;li&gt;Decimal to binary do long division&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div id=&#34;outline-container-headline-2&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-2&#34;&gt;
+Adding two binary numbers.
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-2&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;Cover to decimal, add, convert to binary&lt;/li&gt;
+&lt;li&gt;1 + 0 = 1
+0 + 0 = 0
+1 + 1 = 10
+1 + 1 + 1 = 11&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-3&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-3&#34;&gt;
+Concept
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-3&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;If you have 5 bits, we can 2^5 different numbers.&lt;/li&gt;
+&lt;li&gt;And we can only represent 0 to 2^5-1.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How do we also represent negative numbers?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;0th bit is Least significant bit&lt;/li&gt;
+&lt;li&gt;N-1th bit is Most significant bit&lt;/li&gt;
+&lt;li&gt;Computers use MSB for calculating negative numbers&lt;/li&gt;
+&lt;li&gt;So we have one bit less for representing positive numbers&lt;/li&gt;
+&lt;li&gt;Range of positive numbers is 0 to 2 ^ (N-1) - 1;&lt;/li&gt;
+&lt;li&gt;Range of negative numbers is -(2^N-1) to -1&lt;/li&gt;
+&lt;li&gt;Let&amp;#39;s say we have 8 bits; range is -2^(7) to 2^7-1&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;2&amp;#39;s compliment: Take 1&amp;#39;s complement and add 1
+1&amp;#39;s complement is toggling all the bits&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-4&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-4&#34;&gt;
+Properties
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-4&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;a &amp;amp; b = b &amp;amp; a&lt;/li&gt;
+&lt;li&gt;a | b = b | a&lt;/li&gt;
+&lt;li&gt;a ^ b = b ^ a&lt;/li&gt;
+&lt;li&gt;same goes to associative&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-5&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-5&#34;&gt;
+Left shift
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-5&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;MSB will be lost&lt;/li&gt;
+&lt;li&gt;After left shifting the number will be double.&lt;/li&gt;
+&lt;li&gt;a &amp;lt;&amp;lt; i = a * 2^i (until the answer is the range, or else it will overflow)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-6&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-6&#34;&gt;
+Right shift
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-6&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;LSB will go to the dustbin&lt;/li&gt;
+&lt;li&gt;After right shift the number will be halved&lt;/li&gt;
+&lt;li&gt;a &amp;gt;&amp;gt; i a/2^i (integer division)&lt;/li&gt;
+&lt;li&gt;If there is a 1 in the MSB, then 1 will come in place of 1 while right shift&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-7&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-7&#34;&gt;
+Problem 2
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-7&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;Find out ith bit is set or not&lt;/li&gt;
+&lt;li&gt;N &amp;amp; (1 &amp;lt;&amp;lt; i) if 0 then unset, or set (the value will be 2^i)&lt;/li&gt;
+&lt;li&gt;(N &amp;gt;&amp;gt; i) &amp;amp; 1 if 0 then unset, or set&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-8&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-8&#34;&gt;
+Problem 3
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-8&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;All the numbers have then duplicates except from one no!&lt;/li&gt;
+&lt;li&gt;Take XOR of all the elements.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-9&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-9&#34;&gt;
+Problem 4
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-9&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;There is a array. All the elements repeats thrice. But there is one digit which is only once.&lt;/li&gt;
+&lt;li&gt;Contribution of bits.&lt;/li&gt;
+&lt;li&gt;For every bit count of number it is set&lt;/li&gt;
+&lt;li&gt;If the bit count % 3 is 0 then this bit is not set in unique number&lt;/li&gt;
+&lt;li&gt;If the bit count % 3 is 1 then this bit is set in unique number&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    <item>
+      <title>First Entry</title>
+      <link>/page/first-entry/</link>
+      <pubDate>Tue, 19 Dec 2023 22:09:26 +0530</pubDate>
+      <guid>/page/first-entry/</guid>
+      <description>&lt;h1 id=&#34;my-first-entry&#34;&gt;My first entry&lt;/h1&gt;
+&lt;h2 id=&#34;an-h2-header&#34;&gt;An h2 header&lt;/h2&gt;
+&lt;p&gt;Here&amp;rsquo;s a numbered list:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;first item&lt;/li&gt;
+&lt;li&gt;second item&lt;/li&gt;
+&lt;li&gt;third item&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note again how the actual text starts at 4 columns in (4 characters
+from the left side). Here&amp;rsquo;s a code sample:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Let me re-iterate ...
+for i in 1 .. 10 { do-something(i) }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As you probably guessed, indented 4 spaces. By the way, instead of
+indenting the block, you can use delimited blocks, if you like:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;define foobar() {
+    print &amp;#34;Welcome to flavor country!&amp;#34;;
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    </channel>
+</rss>

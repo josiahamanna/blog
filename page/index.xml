@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Josiah&#39;s blog</title>
+    <link>/page/</link>
+    <description>Recent content in Pages on Josiah&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Dec 2023 22:09:26 +0530</lastBuildDate>
+    <atom:link href="/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First Entry</title>
+      <link>/page/first-entry/</link>
+      <pubDate>Tue, 19 Dec 2023 22:09:26 +0530</pubDate>
+      <guid>/page/first-entry/</guid>
+      <description>&lt;h1 id=&#34;my-first-entry&#34;&gt;My first entry&lt;/h1&gt;
+&lt;h2 id=&#34;an-h2-header&#34;&gt;An h2 header&lt;/h2&gt;
+&lt;p&gt;Here&amp;rsquo;s a numbered list:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;first item&lt;/li&gt;
+&lt;li&gt;second item&lt;/li&gt;
+&lt;li&gt;third item&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note again how the actual text starts at 4 columns in (4 characters
+from the left side). Here&amp;rsquo;s a code sample:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Let me re-iterate ...
+for i in 1 .. 10 { do-something(i) }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As you probably guessed, indented 4 spaces. By the way, instead of
+indenting the block, you can use delimited blocks, if you like:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;define foobar() {
+    print &amp;#34;Welcome to flavor country!&amp;#34;;
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    </channel>
+</rss>
