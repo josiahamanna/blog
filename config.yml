@@ -1,4 +1,4 @@
-baseURL: 'https:josiahamanna.github.io/blog/'
+baseURL: "https:josiahamanna.github.io/blog/"
 languageCode: en-us
 title: "Josiah's blog"
 theme: zen
