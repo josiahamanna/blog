@@ -2,23 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>https:josiahamanna.github.io/blog/</loc>
     <lastmod>2023-12-21T21:51:41+05:30</lastmod>
   </url><url>
-    <loc>/orgs/org-entry/</loc>
+    <loc>https:josiahamanna.github.io/blog/orgs/org-entry/</loc>
     <lastmod>2023-12-21T21:51:41+05:30</lastmod>
   </url><url>
-    <loc>/orgs/</loc>
+    <loc>https:josiahamanna.github.io/blog/orgs/</loc>
     <lastmod>2023-12-21T21:51:41+05:30</lastmod>
   </url><url>
-    <loc>/page/first-entry/</loc>
+    <loc>https:josiahamanna.github.io/blog/page/first-entry/</loc>
     <lastmod>2023-12-19T22:09:26+05:30</lastmod>
   </url><url>
-    <loc>/page/</loc>
+    <loc>https:josiahamanna.github.io/blog/page/</loc>
     <lastmod>2023-12-19T22:09:26+05:30</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>https:josiahamanna.github.io/blog/categories/</loc>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>https:josiahamanna.github.io/blog/tags/</loc>
   </url>
 </urlset>
