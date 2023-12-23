@@ -9,9 +9,9 @@ draft: false
 An h2 header
 ------------
 
- 1. first item
- 2. second item
- 3. third item
+ 1. first 
+ 2. second 
+ 3. third 
 
 Note again how the actual text starts at 4 columns in (4 characters
 from the left side). Here's a code sample:
