@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Josiah&#39;s blog</title>
-    <link>https://josiahamanna.github.io/blog/</link>
-    <description>Recent content on Josiah&#39;s blog</description>
+    <title>Posts on Josiah&#39;s blog</title>
+    <link>https://josiahamanna.github.io/blog/posts/</link>
+    <description>Recent content in Posts on Josiah&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 Dec 2023 14:14:36 +0530</lastBuildDate>
-    <atom:link href="https://josiahamanna.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://josiahamanna.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OOP in JS</title>
       <link>https://josiahamanna.github.io/blog/posts/oop-in-js/</link>
