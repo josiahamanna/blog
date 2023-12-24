@@ -10,14 +10,15 @@ params:
   description: ""           # Set site description, used in meta tags and JSON-LD
   favicon: ""               # Relative path to favicon in json feed, no leading slash.
   feedlinks: true           # Show feed links in the footer.
-  icon: ""                  # Relative path to icon in json feed and JSON-LD, no leading slash.
-  image: ""                 # Relative path to site image in JSON-LD, no leading slash.
+  icon: ""
+  image: ""
   imageMaxWidth: ""         # Max width for images added via figure shortcode.
   jquery: true              # Add jQuery, default false.
   languageDir: ""           # Set ltr or rtl, defaults to ltr.
   logo: true               # Turn off the logo.
-  logoPath:                 # Relative path to site logo, defaults to "images/logo.png", no leading slash.
-  logoWidth:                # Set logo width, defaults to none.
+  logoPath: ""
+  logoWidth: "100px"               # Set logo width, defaults to none.
+  logoHieight: "100px"               # Set logo width, defaults to none.
   menuInHeader: true        # Move the main menu to the header, default false.
   microUsername: ""         # Your micro.blog username.
   mobileMenu: true          # Turn on a mobile menu on small screens, default false.

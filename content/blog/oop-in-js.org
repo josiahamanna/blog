@@ -1,0 +1,153 @@
+---
+title: "OOP in JS"
+date: 2023-12-24T14:14:36+05:30
+draft: false
+---
+
+OOP offers a structured and efficient approach to software development by advocating for good coding practices such as encapsulation, inheritance, and abstraction. In JavaScript, object-oriented programming is implemented using the *prototype chain*.
+
+While JavaScript does have the ~class~ keyword, this blog post aims to delve into what occurs behind the scenes. We'll explore the underlying mechanisms that drive JavaScript's Object-Oriented Programming (OOP) concepts, offering a deeper understanding beyond the surface level provided by the ~class~ keyword.
+
+For instance, consider an application managing a chess match with players:
+
+1. player1
+   - name: 'Magnus'
+   - score: 3
+
+1. player2
+   - name: 'Fabiano'
+   - score: 5
+
+When it comes to incrementing the scores of these players, incorporating this functionality into the data is essential.
+
+How can we combine data and functionality within a single entity? JavaScript objects provide a solution.
+
+#+begin_src javascript
+const player1 = {
+    name: 'Magnus',
+    scrore: 3,
+    increment: function() {
+        player1.scrore++;
+    }
+};
+
+player1.increment();
+#+end_src
+
+The dot operator can also be employed to assign property values:
+
+#+begin_src javascript
+const player2 = {}; //create an empty object
+
+//assign properties to that object
+player2.name = 'Fabiano';
+player2.scrore = 3;
+player2.increment = function() {
+    player2.scrore++;
+}
+#+end_src
+
+Another built-in function, ~Object.create()~, enables the creation of an empty object:
+
+#+begin_src javascript
+const player3 = Object.create(null);
+
+player3.name = 'Viswanathan';
+player3.scrore = 9;
+player3.increment = function() {
+    player3.scrore++;
+}
+#+end_src
+
+However, redundancy emerges as the same functionality is repeated for each player, leading to tedium.
+To streamline this process, we can abstract it by creating a function that performs these tasks for us.
+
+#+begin_src javascript
+function playerCreator(name, score) {
+    const newPlayer = {};
+    newPlayer.name = name;
+    newPlayer.score = score;
+    newPlayer.increment = function() {
+        newPlayer.score++;
+    };
+    return newPlayer;
+};
+
+const player1 = playerCreator("Magnus", 3);
+const player2 = playerCreator("Fabiano", 5);
+player1.increment();
+#+end_src
+
+Small bonus here :P
+
+**Question:** How does JavaScript remember ~newPlayer~ in ~player1.increment()~?
+
+**Answer:** JavaScript's ability to remember ~newPlayer~ even after ~playerCreator~ finishes running is thanks to a concept called closure. When ~player1.increment()~ runs, JavaScript retains a link to ~newPlayer~ from the ~playerCreator~ function. This happens because of closure, which allows inner functions like ~increment~ to access variables from their enclosing functions even after those functions have finished running. So, although ~playerCreator~ is done and ~newPlayer~ was returned, ~increment~ still knows about ~newPlayer~. This is why ~player1.increment()~ can effectively update ~score~, demonstrating how closure works in JavaScript.
+
+Returning to our object generator function, there are two drawbacks in this approach:
+
+1. **Duplication of Functions:** Every player object contains the same function, resulting in duplication. This violates the principle of avoiding repetition in coding.
+
+2. **Difficulty in Adding Features:** Adding a new feature to our player object becomes challenging. Any additional feature needs to be manually added to each player object, making the process cumbersome and error-prone.
+
+These drawbacks highlight the inefficiency of the current approach, emphasizing the importance of a more streamlined and scalable solution.
+
+This is where we harness the power of *Prototype Chaining*.
+
+By storing the ~increment~ function in a shared or common object, if ~player.increment()~ doesn't locate the function directly within the player object, it seeks a connection or link to the common object to find it there.
+
+We make use of ~Object.create()~ method for this:
+
+#+begin_src javascript
+const playerFunctionStore = {
+    increment: function() { this.score++; },
+};
+
+function playerCreator (name, score) {
+    const newPlayer = Object.create(playerFunctionStore);
+    newPlayer.name = name;
+    newPlayer.score = score;
+    return newPlayer;
+}
+
+const player1 = playerCreator("Magnus", 3);
+const player2 = playerCreator("Fabiano", 5);
+
+player1.increment();
+#+end_src
+
+In the given code snippet, prototype chaining is utilized through the ~__proto__~ property, facilitated by ~Object.create()~, to establish a relationship between objects and enable the sharing of functionalities without redundancy.
+
+In our example, the ~playerFunctionStore~ object serves as a prototype or a common repository containing the ~increment~ function. When a new player object is created using ~playerCreator~, it is linked to ~playerFunctionStore~ through the hidden ~__proto__~ property created by ~Object.create(playerFunctionStore)~. This ~__proto__~ property is not directly accessible in modern JavaScript, but it serves as the linkage, allowing the player object to access the ~increment~ function defined in ~playerFunctionStore~.
+
+For instance, executing ~player1.increment()~ initiates a search for the ~increment~ method within ~player1~. If the method isn't directly found within ~player1~, JavaScript follows the prototype chain established by the ~__proto__~ property, leading it to ~playerFunctionStore~ where it locates and executes the ~increment~ function. This mechanism ensures that all player objects created through ~playerCreator~ can share and access the same functionality defined in ~playerFunctionStore~, promoting code reusability.
+
+Everything we've explored thus far delves into the inner workings behind object creation using function constructors in JavaScript. It's the new keyword that orchestrates this process behind the scenes, utilizing function constructors to generate objects based on their defined blueprints.
+
+Function constructors in JavaScript serve three primary functions:
+1. They create an object.
+2. They initialize properties within that object.
+3. They return the created object.
+
+Now, let's explore the essence of ~FunctionStore~. In JavaScript, a function is a blend of both a function and an object. When we invoke a function, we use parentheses ~()~ to execute it, while the object part is accessed using the dot operator ~.~.
+
+Every object in JavaScript possesses a ~prototype~ property, which inherently links to an empty object. This empty object serves as the ~prototype~ for instances created using function constructors. Essentially, this empty object acts as the ~FunctionStore~ object utilized previously, allowing us to use it as a template for defining shared functionalities among multiple instances.
+
+#+begin_src javascript
+function playerCreator(name, score) {
+    this.name = name;
+    this.score = score;
+}
+
+playerCreator.prototype.increment = function() { this.score++; };
+
+const player1 = new playerCreator("Magnus", 3);
+
+player1.increment();
+#+end_src
+
+In summary:
+- The ~class~ keyword in JavaScript operates using similar underlying concepts.
+- Under the hood, ~class~ still relies on prototype-based object creation.
+- When a class is instantiated using ~new~, it utilizes the ~this~ keyword for object initialization.
+- Despite the ~class~ keyword providing a more structured syntax, it essentially uses the same principles of constructor functions and prototype chaining for object creation in JavaScript.

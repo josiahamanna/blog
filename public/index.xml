@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Josiah&#39;s blog</title>
+    <link>https://josiahamanna.github.io/blog/</link>
+    <description>Recent content on Josiah&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://josiahamanna.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    </channel>
+</rss>
